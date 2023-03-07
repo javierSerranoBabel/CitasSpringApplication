@@ -3,9 +3,11 @@ package com.helloworld.citasSpring.service.impl;
 import com.helloworld.citasSpring.domain.Cita;
 import com.helloworld.citasSpring.repository.CitaRepository;
 import com.helloworld.citasSpring.service.CitaService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CitaServiceImpl implements CitaService {
     CitaRepository citaRepository;
 

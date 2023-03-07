@@ -2,6 +2,7 @@ package com.helloworld.citasSpring.infra.console;
 
 import com.helloworld.citasSpring.domain.Cita;
 import com.helloworld.citasSpring.service.CitaService;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.text.ParseException;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+@Component
 public class ConsoleReader {
     private CitaService citaService;
 
