@@ -3,6 +3,7 @@ package com.helloworld.citasSpring.infra.console;
 import com.helloworld.citasSpring.domain.Cita;
 import com.helloworld.citasSpring.service.CitaService;
 
+import javax.annotation.PostConstruct;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,6 +19,8 @@ public class ConsoleReader {
     }
 
     SimpleDateFormat fechaFormateador = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.forLanguageTag("es_ES"));
+
+    @PostConstruct
     public void init(){
         Scanner sc = new Scanner(System.in);
         String entadaConsola;
