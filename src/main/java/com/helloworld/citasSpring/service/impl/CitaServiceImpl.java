@@ -1,8 +1,11 @@
 package com.helloworld.citasSpring.service.impl;
 
+import com.helloworld.citasSpring.CitasSpringApplication;
 import com.helloworld.citasSpring.domain.Cita;
 import com.helloworld.citasSpring.repository.CitaRepository;
 import com.helloworld.citasSpring.service.CitaService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +13,7 @@ import java.util.List;
 
 @Service
 public class CitaServiceImpl implements CitaService {
+    private static Logger logger = LogManager.getLogger(CitasSpringApplication.class);
     private CitaRepository citaRepositoryMemory;
     private CitaRepository citaRepositorySQL;
 
@@ -22,7 +26,15 @@ public class CitaServiceImpl implements CitaService {
 
     // if tenemos conexion sql si no memory
     public void alta(Cita cita){
-        citaRepositoryMemory.alta(cita);
+        logger.info("Dando una cita de alta");
+        logger.debug("Cita: " + cita.toString());
+        try{
+            citaRepositoryMemory.alta(cita);
+        }catch(Exception e){
+            logger.error(e.getMessage());
+        }
+
+
     }
     public void baja(int indice){
         citaRepositoryMemory.baja(indice);

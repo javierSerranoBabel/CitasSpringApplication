@@ -40,4 +40,13 @@ public class Cita {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString() {
+        return "Cita{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", fecha=" + fecha +
+                '}';
+    }
 }
